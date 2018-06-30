@@ -67,7 +67,7 @@ RUN apk add -U \
       -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/local/lib/python3.6/site-packages/numpy/core/include/ \
       .. \
     && make VERBOSE=1 \
-    && make \
+    && make -j4 \
     && make install \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \
     && apk del .build-dependencies \
