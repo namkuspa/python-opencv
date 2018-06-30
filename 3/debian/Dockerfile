@@ -2,7 +2,9 @@ FROM python:3.6.6-slim-stretch
 
 LABEL maintainer="Jose Truyol <jose@namku.cl>"
 
-ARG RUNTIME_DEPS='ca-certificates libpng-dev libjpeg-dev libwebp-dev libtiff5-dev libopenexr-dev libopenblas-dev libx11-dev liblapack-dev liblapacke-dev'
+ARG RUNTIME_DEPS='ca-certificates libpng-dev libjpeg-dev libwebp-dev \
+                  libtiff5-dev libopenexr-dev libopenblas-dev \
+                 libx11-dev liblapack-dev liblapacke-dev libglib2.0-0'
 ARG BUILD_DEPS='apt-utils wget unzip cmake build-essential pkg-config'
 ARG LIB_PREFIX='/usr/local'
 ARG VERSION='3.4.1'
@@ -74,5 +76,5 @@ RUN echo "OpenCV: ${OPENCV_VERSION}" \
     && apt-get install -y $RUNTIME_DEPS --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* /usr/share/man /usr/local/share/man /tmp/*
 
-RUN pip install opencv-python
+RUN pip install opencv-python-headless
 ENTRYPOINT ["python3"]
