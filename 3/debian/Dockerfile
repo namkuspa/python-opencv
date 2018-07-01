@@ -77,4 +77,5 @@ RUN echo "OpenCV: ${OPENCV_VERSION}" \
     && rm -rf /var/lib/apt/lists/* /usr/share/man /usr/local/share/man /tmp/*
 
 RUN pip install opencv-python-headless
-ENTRYPOINT ["python3"]
+
+CMD ["python3"]
