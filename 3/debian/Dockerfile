@@ -49,8 +49,8 @@ RUN echo "OpenCV: ${OPENCV_VERSION}" \
     -D BUILD_opencv_line_descriptor=OFF \
     -D BUILD_opencv_optflow=OFF \
     -D BUILD_opencv_phase_unwrapping=OFF \
-    -D BUILD_opencv_python3=OFF \
-    -D BUILD_opencv_python_bindings_generator=OFF \
+    -D BUILD_opencv_python3=ON \
+    -D BUILD_opencv_python_bindings_generator=ON \
     -D BUILD_opencv_reg=OFF \
     -D BUILD_opencv_rgbd=OFF \
     -D BUILD_opencv_saliency=OFF \
@@ -76,6 +76,5 @@ RUN echo "OpenCV: ${OPENCV_VERSION}" \
     && apt-get install -y $RUNTIME_DEPS --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* /usr/share/man /usr/local/share/man /tmp/*
 
-RUN pip install opencv-python-headless
 
 CMD ["python3"]

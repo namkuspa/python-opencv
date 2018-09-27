@@ -9,9 +9,6 @@
 | 3.6.6 | [![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/namkuspa/python-opencv/3.6.6.svg)](https://hub.docker.com/r/namkuspa/python-opencv/)    | [![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/namkuspa/python-opencv/3.6.6.svg)](https://hub.docker.com/r/namkuspa/python-opencv/)|
 
 
-## Nota
-Esta imagen usa la version `headless` del wheel `opencv-python`, ya que no necesita las depencias para interfaz grafica
-
 ## ¿Cómo usar?
 ```console
 $ docker run --rm -it namkuspa/python-opencv:3.6.6
